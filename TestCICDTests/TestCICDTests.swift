@@ -10,7 +10,7 @@ import Testing
 struct TestCICDTests {
 
     @Test func example() async throws {
-        #expect(0 + 20 == 20)
+        #expect(0 + 23 == 23)
         // Write your test here and use APIs like `#expect(...)` to check expected conditions.
     }
 }
