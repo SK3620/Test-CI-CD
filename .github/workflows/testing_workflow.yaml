@@ -7,7 +7,7 @@ run-name: Run by @${{ github.actor }} # 実行者の名前を表示
 on:
   workflow_dispatch: # 手動トリガー
   pull_request: # プルリクエストによるトリガー
-    branches: ["dev"] # `dev`ブランチに対するPRのみ対象
+    branches: ["develop"] # `dev`ブランチに対するPRのみ対象
 
 jobs:
   testing_job:
