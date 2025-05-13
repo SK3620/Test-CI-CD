@@ -29,6 +29,44 @@
 		830E1F702DD309A800E874E9 /* TestCICDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestCICDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		830E1FA52DD3175E00E874E9 /* Exceptions for ".github" folder in "TestCICD" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				workflows/testing_with_pods_workflow.yaml,
+			);
+			target = 830E1F552DD309A500E874E9 /* TestCICD */;
+		};
+		830E1FAE2DD31D2D00E874E9 /* Exceptions for "LearningMemo" folder in "TestCICD" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Action_Cache.txt,
+				Action_Checkout.txt,
+				Backslash.txt,
+			);
+			target = 830E1F552DD309A500E874E9 /* TestCICD */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		830E1FA62DD3175E00E874E9 /* Exceptions for ".github" folder in "Compile Sources" phase from "TestCICD" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 830E1F522DD309A500E874E9 /* Sources */;
+			membershipExceptions = (
+				workflows/testing_with_pods_workflow.yaml,
+			);
+		};
+		830E1FAF2DD31D2D00E874E9 /* Exceptions for "LearningMemo" folder in "Compile Sources" phase from "TestCICD" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 830E1F522DD309A500E874E9 /* Sources */;
+			membershipExceptions = (
+				Action_Cache.txt,
+				Action_Checkout.txt,
+				Backslash.txt,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		830E1F582DD309A500E874E9 /* TestCICD */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -43,6 +81,24 @@
 		830E1F732DD309A800E874E9 /* TestCICDUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = TestCICDUITests;
+			sourceTree = "<group>";
+		};
+		830E1FA02DD3169600E874E9 /* .github */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				830E1FA52DD3175E00E874E9 /* Exceptions for ".github" folder in "TestCICD" target */,
+				830E1FA62DD3175E00E874E9 /* Exceptions for ".github" folder in "Compile Sources" phase from "TestCICD" target */,
+			);
+			path = .github;
+			sourceTree = "<group>";
+		};
+		830E1FA72DD31C1700E874E9 /* LearningMemo */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				830E1FAE2DD31D2D00E874E9 /* Exceptions for "LearningMemo" folder in "TestCICD" target */,
+				830E1FAF2DD31D2D00E874E9 /* Exceptions for "LearningMemo" folder in "Compile Sources" phase from "TestCICD" target */,
+			);
+			path = LearningMemo;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +131,8 @@
 		830E1F4D2DD309A500E874E9 = {
 			isa = PBXGroup;
 			children = (
+				830E1FA72DD31C1700E874E9 /* LearningMemo */,
+				830E1FA02DD3169600E874E9 /* .github */,
 				830E1F582DD309A500E874E9 /* TestCICD */,
 				830E1F692DD309A800E874E9 /* TestCICDTests */,
 				830E1F732DD309A800E874E9 /* TestCICDUITests */,
@@ -109,6 +167,8 @@
 			);
 			fileSystemSynchronizedGroups = (
 				830E1F582DD309A500E874E9 /* TestCICD */,
+				830E1FA02DD3169600E874E9 /* .github */,
+				830E1FA72DD31C1700E874E9 /* LearningMemo */,
 			);
 			name = TestCICD;
 			packageProductDependencies = (

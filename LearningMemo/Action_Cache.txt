@@ -1,0 +1,58 @@
+//
+//  Action_Cache.swift
+//  TestCICD
+//
+//  Created by 鈴木 健太 on 2025/05/13.
+//
+
+素晴らしい質問です！
+
+✅ actions/cache@v2 とは？
+▶ 説明：
+ビルドや依存関係のインストール（例：pod install）には時間がかかりますよね？
+毎回ゼロからインストールせずに、前回の結果（キャッシュ）を使って時短するのが actions/cache の役割です。
+
+▶ @v2 の意味：
+これはバージョン指定で、「バージョン2を使う」という意味です（最新の安定版）。
+
+✅ iOS開発での活用例（CocoaPodsの場合）
+yaml
+コピーする
+編集する
+- uses: actions/cache@v2
+  with:
+    path: Pods
+    key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+    restore-keys: |
+      ${{ runner.os }}-pods-
+▶ それぞれの意味
+項目    意味
+uses: actions/cache@v2    cacheアクションのバージョン2を使う
+path: Pods    キャッシュしたいフォルダ（ここでは CocoaPods の Pods ディレクトリ）
+key:    キャッシュの識別キー。変更されるとキャッシュが無効になります
+hashFiles('**/Podfile.lock')    Podfile.lock の内容が変わるたびに新しいキャッシュキーが作られます
+restore-keys:    上記のキーが見つからなかったときのための「予備キー」
+
+✅ 何が嬉しいの？
+✅ pod install を毎回最初からやらずに済む
+
+✅ GitHub Actions の実行時間を大幅に短縮
+
+✅ キャッシュが効けば CI のコストも減る
+
+✅ 図解イメージ（簡略）
+makefile
+コピーする
+編集する
+📦 GitHub Actions ワークフロー
+───────────────
+1回目:
+  🔄 pods フォルダをキャッシュに保存
+2回目以降:
+  ✅ 同じ Podfile.lock ならキャッシュを再利用 → 高速！
+🔍 まとめ
+用語    意味
+actions/cache@v2    キャッシュアクション。重い処理の再実行を避けて時短できる
+よく使う場面    pod install, Carthage, SPM, node_modules, build フォルダなど
+
+
