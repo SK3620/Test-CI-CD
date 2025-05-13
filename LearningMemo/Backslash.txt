@@ -1,0 +1,36 @@
+xcodebuild \ のように 行末にあるバックスラッシュ（\） は、シェルコマンドを複数行に分けて書くための記号です。
+
+✅ 意味
+バックスラッシュ（\）は、「この行はまだ終わってないよ、次の行に続くよ」という意味を持ちます。
+
+✅ 具体例で解説
+次の2つは、まったく同じ意味です：
+
+1行で書いた場合（可読性が悪い）
+bash
+コピーする
+編集する
+xcodebuild -project TestCICD.xcodeproj -scheme Develop -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12' clean test
+複数行に分けた場合（読みやすい）
+bash
+コピーする
+編集する
+xcodebuild \
+  -project TestCICD.xcodeproj \
+  -scheme Develop \
+  -sdk iphonesimulator \
+  -destination 'platform=iOS Simulator,name=iPhone 12' \
+  clean test
+✅ なぜ使うの？
+可読性が上がる（長いコマンドを見やすく整理できる）
+
+GitHub Actions の YAML スクリプトでもよく使われる書き方
+
+✅ 注意点
+\ の 後ろにはスペースを入れないこと！
+
+✅ 正しい：-scheme Develop \
+
+❌ 間違い：-scheme Develop \ ← 最後にスペースがあるとエラーになります
+
+
