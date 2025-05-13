@@ -21,7 +21,7 @@ jobs:
         run: |
           cd TestCICD
           xcodebuild \
-            -project TestCICD.xcodeproj \ 
+            -project TestCICD.xcodeproj \
             -scheme Develop \
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 16' \
