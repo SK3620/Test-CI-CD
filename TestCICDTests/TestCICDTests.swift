@@ -6,7 +6,6 @@
 //
 
 import Testing
-import TestCICD
 
 struct TestCICDTests {
 
