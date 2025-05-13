@@ -1,0 +1,65 @@
+//
+//  Action_Checkout.swift
+//  TestCICD
+//
+//  Created by 鈴木 健太 on 2025/05/13.
+//
+
+ ✅ 1. actions/checkout とは？
+ ▶ 意味：
+ GitHub リポジトリのソースコードを、仮想マシン（ランナー）にダウンロードして使えるようにするアクションです。
+
+ ▶ なぜ必要？
+ GitHub Actions では、ワークフローは 空っぽの仮想マシン（ランナー）から始まります。そのままだと、自分のリポジトリのコードを使えません。
+
+ actions/checkout を使うことで、
+
+ あなたのリポジトリにある
+
+ Swiftコードや Xcode プロジェクト、
+
+ Podfile などのファイルを
+ 👉 仮想マシンにダウンロードしてくれます。
+
+ ▶ コードでいうと：
+ yaml
+ コピーする
+ 編集する
+ - uses: actions/checkout@v2
+ これは、「GitHub公式の checkout アクション（v2）」を使う、という意味です。
+
+ ✅ 2. ランナー（runs-on）とは？
+ ▶ 意味：
+ **GitHub Actions のジョブを動かすための仮想マシン（PC）**です。
+
+ ▶ どんな種類がある？
+ 設定値    説明    向いている用途
+ ubuntu-latest    Linux（軽くて高速）    Web・Node.js・Python など
+ windows-latest    Windows OS    Windowsアプリ・.NET系など
+ macos-latest    macOS（Xcode入り）    iOSアプリ開発・テスト
+
+ あなたのワークフローではこのように書かれています：
+
+ yaml
+ コピーする
+ 編集する
+ runs-on: macos-latest
+ これは、GitHub が用意している「macOS（Xcode入り）仮想マシン」の上でジョブを実行する、という意味です。
+
+ ✅ iOSアプリのビルドやテストには必ず macOS が必要なので、この指定は正しいです！
+
+ ✅ 補足：GitHub Actions の流れをイメージ図で例えると
+ markdown
+ コピーする
+ 編集する
+ 📦 GitHub Actions の仕組み
+ ──────────────────────────
+ 1. 🧑‍💻 開発者が PR や Push をする
+ 2. 🖥️ GitHub が仮想マシン（ランナー）を起動
+ 3. 🛠️ actions/checkout でリポジトリのコードをダウンロード
+ 4. 📦 pod install / xcodebuild などのコマンドを実行
+ 5. ✅ テストが成功 or 失敗の結果を表示
+ 🔍 まとめ
+ 項目    説明
+ actions/checkout    リポジトリのコードを仮想マシンにダウンロードするステップ
+ runs-on    ワークフローを動かす「仮想PC」の種類を指定（iOSなら macos-latest）
