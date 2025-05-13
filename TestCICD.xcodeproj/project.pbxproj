@@ -24,7 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		830E1F562DD309A500E874E9 /* TestCICD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestCICD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		830E1F562DD309A500E874E9 /* TestCICDStg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestCICDStg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		830E1F662DD309A800E874E9 /* TestCICDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestCICDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		830E1F702DD309A800E874E9 /* TestCICDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestCICDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -85,7 +85,7 @@
 		830E1F572DD309A500E874E9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				830E1F562DD309A500E874E9 /* TestCICD.app */,
+				830E1F562DD309A500E874E9 /* TestCICDStg.app */,
 				830E1F662DD309A800E874E9 /* TestCICDTests.xctest */,
 				830E1F702DD309A800E874E9 /* TestCICDUITests.xctest */,
 			);
@@ -114,7 +114,7 @@
 			packageProductDependencies = (
 			);
 			productName = TestCICD;
-			productReference = 830E1F562DD309A500E874E9 /* TestCICD.app */;
+			productReference = 830E1F562DD309A500E874E9 /* TestCICDStg.app */;
 			productType = "com.apple.product-type.application";
 		};
 		830E1F652DD309A800E874E9 /* TestCICDTests */ = {
@@ -347,8 +347,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kenta-suzuki.TestCICD";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kenta-suzuki.TestCICDPrd";
+				PRODUCT_NAME = TestCICDPrd;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -475,8 +475,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kenta-suzuki.TestCICD";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kenta-suzuki.TestCICDDev";
+				PRODUCT_NAME = TestCICDDev;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -603,8 +603,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kenta-suzuki.TestCICD";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kenta-suzuki.TestCICDStg";
+				PRODUCT_NAME = TestCICDStg;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
