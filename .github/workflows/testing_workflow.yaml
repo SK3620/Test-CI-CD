@@ -19,7 +19,6 @@ jobs:
 
       - name: Run TestCICD Tests!!!
         run: |
-          cd TestCICD
           xcodebuild \
             -project TestCICD.xcodeproj \
             -scheme Develop \
