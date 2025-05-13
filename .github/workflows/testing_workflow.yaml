@@ -1,0 +1,30 @@
+# このスクリプトは、`dev`ブランチへのプルリクエストが作成されたとき、または手動でディスパッチされたときにトリガーされるGitHub Actionsワークフローを定義します。
+#  -project TestCICD.xcodeproj \  ← .xcworkspace を使っていない前提（使っていれば変更）
+
+name: TestCICD testing workflow # ワークフローの名前
+run-name: Run by @${{ github.actor }} # 実行者の名前を表示
+
+on:
+  workflow_dispatch: # 手動トリガー
+  pull_request: # プルリクエストによるトリガー
+    branches: ["dev"] # `dev`ブランチに対するPRのみ対象
+
+jobs:
+  testing_job:
+    runs-on: macos-latest # macOS環境で実行（Xcode必須のため）
+
+    steps:
+      - name: Checkout repository!!!
+        uses: actions/checkout@v2
+
+      - name: Run TestCICD Tests!!!
+        run: |
+          cd TestCICD
+          xcodebuild \
+            -project TestCICD.xcodeproj \ 
+            -scheme Develop \
+            -sdk iphonesimulator \
+            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            clean test
+
+# CIでよく使われる clean を追加しました（ビルドキャッシュが影響しないように）。
