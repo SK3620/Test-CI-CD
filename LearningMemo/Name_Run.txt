@@ -1,0 +1,60 @@
+✅ name: とは？
+ステップやジョブに名前を付けるための項目です。
+
+実行結果のログ上で見やすくするために使います。
+
+人間が読むためのラベルのようなもの。
+
+例：
+yaml
+コピーする
+編集する
+- name: CocoaPods Install
+  run: pod install
+→ GitHub Actions のログ画面で「✅ CocoaPods Install」と表示されます。
+何をやっているか一目で分かるようになります。
+
+✅ run: とは？
+実際に実行するコマンドを書く場所です。
+
+これは シェルスクリプト（bash）と同じような使い方をします。
+
+例：
+yaml
+コピーする
+編集する
+- run: echo "Hello World"
+→ ターミナルで echo "Hello World" を実行するのと同じです。
+
+✅ name: と run: のセットの例
+yaml
+コピーする
+編集する
+- name: Install CocoaPods
+  run: |
+    cd YourProjectName
+    pod install
+キー    役割
+name:    ログ上のステップの名前（人間に優しい）
+run:    実行する実際のコマンド（機械に伝える）
+
+✅ run: | の「縦棒（パイプ）」って？
+| は 複数行のシェルコマンドを書くときに使います。
+
+例：
+yaml
+コピーする
+編集する
+- run: |
+    cd MyApp
+    pod install
+    echo "Pods installed!"
+このように、改行して3つのコマンドをまとめて実行できます。
+
+✅ まとめ
+キーワード    意味
+name:    ログ上に表示されるステップの説明（日本語でもOK）
+run:    実行するシェルコマンド（1行でも複数行でもOK）
+`run:    `
+
+
