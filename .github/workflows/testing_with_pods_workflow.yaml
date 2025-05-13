@@ -1,0 +1,32 @@
+# CocoaPods を使用している場合に、このワークフローを使用してください
+
+# このスクリプトは、`dev`ブランチへのプルリクエストが作成されたとき、または手動でディスパッチされたときにトリガーされるGitHub Actionsワークフローを定義します。
+
+name: TestCICD testing workflow # ワークフローの名前
+run-name: Run by @${{ SK3620 }} # ワークフローランナー
+on:
+  workflow_dispatch: # ワークフローが手動でディスパッチされたときにワークフローをトリガーします
+  pull_request: # プルリクエストが作成されたときにワークフローをトリガーします
+    branches: ["dev"] # プルリクエストが`dev`ブランチに対して作成されたときのみ、ワークフローをトリガーします
+jobs:
+  testing_job: # `testing_job`という名前のジョブを定義します
+    runs-on: macos-latest # `macos-latest`オペレーティングシステムでジョブを実行します
+    steps:
+      - uses: actions/checkout@v2 # リポジトリのコードをチェックアウトするために`actions/checkout`アクションを使用します
+      - uses: actions/cache@v2 # Podsディレクトリをキャッシュするために`actions/cache`アクションを使用します
+        with:
+          path: Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+      - name: CocoaPods Install!!! # CocoaPodsの依存関係をインストールします
+        run: |
+          cd TestCICD
+          pod install
+      - name: Test!!! # BBLプロジェクトのテストを実行します
+        run: |
+          cd TestCICD
+          xcodebuild -workspace YourProjectName.xcworkspace -scheme BBL -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12' test
+
+# cd TestCICD　podfileが含まれるファイル内に移動します
+# cd TestCICD　YourProjectName.xcworkspaceファイルが含まれるファイル内に移動します
