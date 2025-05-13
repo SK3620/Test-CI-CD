@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 73;
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
@@ -30,14 +30,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		830E1FA52DD3175E00E874E9 /* Exceptions for ".github" folder in "TestCICD" target */ = {
+		830E1FA52DD3175E00E874E9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				workflows/testing_with_pods_workflow.yaml,
 			);
 			target = 830E1F552DD309A500E874E9 /* TestCICD */;
 		};
-		830E1FAE2DD31D2D00E874E9 /* Exceptions for "LearningMemo" folder in "TestCICD" target */ = {
+		830E1FAE2DD31D2D00E874E9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Action_Cache.txt,
@@ -49,14 +49,14 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		830E1FA62DD3175E00E874E9 /* Exceptions for ".github" folder in "Compile Sources" phase from "TestCICD" target */ = {
+		830E1FA62DD3175E00E874E9 /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			buildPhase = 830E1F522DD309A500E874E9 /* Sources */;
 			membershipExceptions = (
 				workflows/testing_with_pods_workflow.yaml,
 			);
 		};
-		830E1FAF2DD31D2D00E874E9 /* Exceptions for "LearningMemo" folder in "Compile Sources" phase from "TestCICD" target */ = {
+		830E1FAF2DD31D2D00E874E9 /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			buildPhase = 830E1F522DD309A500E874E9 /* Sources */;
 			membershipExceptions = (
@@ -68,39 +68,11 @@
 /* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		830E1F582DD309A500E874E9 /* TestCICD */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TestCICD;
-			sourceTree = "<group>";
-		};
-		830E1F692DD309A800E874E9 /* TestCICDTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TestCICDTests;
-			sourceTree = "<group>";
-		};
-		830E1F732DD309A800E874E9 /* TestCICDUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TestCICDUITests;
-			sourceTree = "<group>";
-		};
-		830E1FA02DD3169600E874E9 /* .github */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				830E1FA52DD3175E00E874E9 /* Exceptions for ".github" folder in "TestCICD" target */,
-				830E1FA62DD3175E00E874E9 /* Exceptions for ".github" folder in "Compile Sources" phase from "TestCICD" target */,
-			);
-			path = .github;
-			sourceTree = "<group>";
-		};
-		830E1FA72DD31C1700E874E9 /* LearningMemo */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				830E1FAE2DD31D2D00E874E9 /* Exceptions for "LearningMemo" folder in "TestCICD" target */,
-				830E1FAF2DD31D2D00E874E9 /* Exceptions for "LearningMemo" folder in "Compile Sources" phase from "TestCICD" target */,
-			);
-			path = LearningMemo;
-			sourceTree = "<group>";
-		};
+		830E1F582DD309A500E874E9 /* TestCICD */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TestCICD; sourceTree = "<group>"; };
+		830E1F692DD309A800E874E9 /* TestCICDTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TestCICDTests; sourceTree = "<group>"; };
+		830E1F732DD309A800E874E9 /* TestCICDUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TestCICDUITests; sourceTree = "<group>"; };
+		830E1FA02DD3169600E874E9 /* .github */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (830E1FA52DD3175E00E874E9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 830E1FA62DD3175E00E874E9 /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = .github; sourceTree = "<group>"; };
+		830E1FA72DD31C1700E874E9 /* LearningMemo */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (830E1FAE2DD31D2D00E874E9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 830E1FAF2DD31D2D00E874E9 /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = LearningMemo; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,7 +227,7 @@
 			);
 			mainGroup = 830E1F4D2DD309A500E874E9;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
+			preferredProjectObjectVersion = 63;
 			productRefGroup = 830E1F572DD309A500E874E9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
