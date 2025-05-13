@@ -17,13 +17,18 @@ jobs:
       - name: Checkout repository!!!
         uses: actions/checkout@v2
 
+      - name: Set the specific stable version of Xcode!!!
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest
+
       - name: Run TestCICD Tests!!!
         run: |
           xcodebuild \
             -project TestCICD.xcodeproj \
             -scheme Develop \
             -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            -destination 'platform=iOS Simulator,name=iPhone 11' \
             clean test
 
 # CIでよく使われる clean を追加しました（ビルドキャッシュが影響しないように）。
